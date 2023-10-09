@@ -8,11 +8,13 @@ import retrofit2.Response
 
 class PokemonRepository(private val pokemonAPIService: PokeApiService) {
 
-    suspend fun getPokemonList(): Response<PokemonListResponse> {
+    fun getPokemonList(): Call<PokemonListResponse> {
         return pokemonAPIService.getPokemonList()
     }
 
-    suspend fun getPokemonDetail(endpoint: String): Response<Pokemon> {
+    fun getPokemonDetail(endpoint: String): Call<Pokemon> {
         return pokemonAPIService.getPokemonDetail(endpoint)
     }
+
+
 }
